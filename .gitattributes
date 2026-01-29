@@ -1,0 +1,59 @@
+# ------------------------------------------------------------------
+# Standard-Verhalten
+# ------------------------------------------------------------------
+# Setze das Standardverhalten, falls nichts anderes definiert ist.
+# Git entscheidet automatisch, ob es Text oder Binär ist.
+* text=auto
+
+# ------------------------------------------------------------------
+# Quellcode & Konfiguration (Erzwinge LF)
+# ------------------------------------------------------------------
+# Für Java-Code und YAML ist es am sichersten, immer LF zu nutzen,
+# auch auf Windows. Das verhindert "falsche" Änderungen in Diffs
+# und hilft bei String-Vergleichen in Unit-Tests.
+*.java      text eol=lf
+*.kt        text eol=lf
+*.groovy    text eol=lf
+*.xml       text eol=lf
+*.yml       text eol=lf
+*.yaml      text eol=lf
+*.properties text eol=lf
+*.md        text eol=lf
+*.json      text eol=lf
+
+# ------------------------------------------------------------------
+# Build-Skripte (Wrapper)
+# ------------------------------------------------------------------
+# Shell-Skripte (Linux/Mac) MÜSSEN LF haben, sonst laufen sie nicht.
+mvnw        text eol=lf
+gradlew     text eol=lf
+
+# Windows-Batch-Skripte sollten CRLF behalten.
+*.cmd       text eol=crlf
+*.bat       text eol=crlf
+
+# ------------------------------------------------------------------
+# Binärdateien
+# ------------------------------------------------------------------
+# Diese Dateien dürfen niemals von Git verändert werden (keine Line-Ending-Konvertierung).
+*.jar       binary
+*.zip       binary
+*.tar       binary
+*.tar.gz    binary
+*.class     binary
+
+# Bilder (z.B. für README Dokumentation)
+*.png       binary
+*.jpg       binary
+*.jpeg      binary
+*.gif       binary
+*.svg       text
+
+# ------------------------------------------------------------------
+# GitHub Linguist Einstellungen (Optional)
+# ------------------------------------------------------------------
+# Hier kannst du GitHub sagen, welche Dateien nicht als "Code" gezählt
+# werden sollen (z.B. Test-Ressourcen oder generierter Code).
+
+# Verhindert, dass Test-Input-Dateien (Stubs) die Sprachstatistik verfälschen
+src/test/resources/** linguist-vendored

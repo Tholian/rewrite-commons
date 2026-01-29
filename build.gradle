@@ -1,0 +1,25 @@
+group = 'org.tholian'
+version = '0.1.0-SNAPSHOT'
+
+subprojects {
+    apply plugin: 'java'
+
+    repositories {
+        mavenCentral()
+    }
+
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(17)
+        }
+    }
+
+    dependencies {
+        implementation platform('org.openrewrite:rewrite-bom:8.72.3')
+        testImplementation platform('org.junit:junit-bom:5.14.2')
+    }
+
+    tasks.named('test') {
+        useJUnitPlatform()
+    }
+}

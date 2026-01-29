@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+}
+
+dependencies {
+    implementation 'org.openrewrite:rewrite-java'
+    implementation 'org.slf4j:slf4j-api:2.0.13'
+    testImplementation 'org.openrewrite:rewrite-java-17'
+
+    compileOnly 'org.projectlombok:lombok:1.18.42'
+    annotationProcessor 'org.projectlombok:lombok:1.18.42'
+    testCompileOnly 'org.projectlombok:lombok:1.18.42'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.42'
+
+    testImplementation 'org.openrewrite:rewrite-test'
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    testImplementation 'org.assertj:assertj-core:3.26.3'
+    testRuntimeOnly 'ch.qos.logback:logback-classic:1.5.6'
+}

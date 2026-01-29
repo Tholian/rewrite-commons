@@ -1,0 +1,9 @@
+type: specs.openrewrite.org/v1beta/recipe
+name: org.tholian.CustomAnnotationSort
+displayName: Sortiere Annotationen (Custom Config)
+description: Sortiert Annotationen an Methoden und Feldern und Klassen unberührt.
+recipeList:
+  - org.tholian.rewrite.annotations.SortAnnotations:
+      sortClasses: true
+      sortMethods: true
+      sortFields: true
